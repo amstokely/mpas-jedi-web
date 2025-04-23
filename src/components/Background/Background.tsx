@@ -119,7 +119,6 @@ export default function Background() {
             scene.add(star)
         }
 
-        let flickerTime = 0
         let targetRotationX = 0
         let targetRotationY = 0
 

@@ -6,6 +6,15 @@ export type LinkType = {
     isActive?: boolean
 }
 
+function handleLinkHoverFn(label: string, setLinks: React.Dispatch<React.SetStateAction<LinkType[]>>) {
+    setLinks(prevLinks =>
+        prevLinks.map(link => ({
+            ...link,
+            isActive: link.label != label,
+        }))
+    )
+}
+
 function handleLinkClickFn(label: string, setLinks: React.Dispatch<React.SetStateAction<LinkType[]>>) {
     setLinks(prevLinks =>
         prevLinks.map(link => ({
@@ -28,8 +37,9 @@ export function useNavbarLinkState(initialLinks: LinkType[]) {
     const [links, setLinks] = useState<LinkType[]>(initialLinks)
 
     const handleLinkClick = (label: string) => handleLinkClickFn(label, setLinks)
+    const handleHover = (label: string) => handleLinkHoverFn(label, setLinks)
     const resetLinks = () => resetLinksFn(setLinks)
 
-    return {links, handleLinkClick, resetLinks}
+    return {links, handleLinkClick, handleHover, resetLinks}
 }
 

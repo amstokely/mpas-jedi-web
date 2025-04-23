@@ -16,7 +16,7 @@ export default function Navbar() {
         {label: 'Tutorials', href: '#', isActive: false},
         {label: 'Publications', href: '#', isActive: false},
     ])
-    const {links, handleLinkClick, resetLinks} = useNavbarLinkState(navbarLinks)
+    const {links, handleLinkClick, handleHover, resetLinks} = useNavbarLinkState(navbarLinks)
     return (
         <Disclosure as="nav" className="fixed bg-gray-900 shadow-sm z-50 backdrop-blur-xl w-full max-w-full">
             <div className="w-full px-2 sm:px-6 lg:px-8">
@@ -24,8 +24,8 @@ export default function Navbar() {
                     <div className="flex justify-between max-w-full">
                         <NavbarNcarButton className="mr-6" imageSrc={NcarLogo} imageAlt={'NCAR'}
                                           linkUrl={'https://ncar.ucar.edu/'}/>
-                        <NavbarLogo onClick={resetLinks}/>
-                        <NavbarLinks links={links} handleLinkClick={handleLinkClick}/>
+                        <NavbarLogo/>
+                        <NavbarLinks links={links} handleLinkClick={handleLinkClick} handleLinkHover={handleHover} handleLinkMouseLeave={resetLinks}/>
                     </div>
                     <div className="flex items-center">
                         <NavbarIconButton imageAlt={"Github"} imageSrc={GitHubIcon}

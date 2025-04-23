@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import NavbarLinks from './NavbarLinks'
 import {LinkType, useNavbarLinkState} from "../../hooks/Navbar/useNavbarLinkState"
 import NavbarIconButton from "./NavbarIconButton";
-import GitHubIcon from "../../github-mark.svg"
+import GitHubIcon from "../../github-mark.png"
 import NavbarNcarButton from "./NavbarIconButton";
 import NcarLogo from "../../logo-ncar.avif";
 import NavbarLogo from "./NavbarLogo";
@@ -18,10 +18,10 @@ export default function Navbar() {
     ])
     const {links, handleLinkClick, resetLinks} = useNavbarLinkState(navbarLinks)
     return (
-        <Disclosure as="nav" className="fixed bg-white/70 shadow-sm z-50 backdrop-blur-md w-full">
+        <Disclosure as="nav" className="fixed bg-gray-900 shadow-sm z-50 backdrop-blur-xl w-full max-w-full">
             <div className="w-full px-2 sm:px-6 lg:px-8">
                 <div className="flex h-16 justify-between items-center">
-                    <div className="flex justify-between">
+                    <div className="flex justify-between max-w-full">
                         <NavbarNcarButton className="mr-6" imageSrc={NcarLogo} imageAlt={'NCAR'}
                                           linkUrl={'https://ncar.ucar.edu/'}/>
                         <NavbarLogo onClick={resetLinks}/>

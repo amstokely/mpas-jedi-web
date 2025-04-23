@@ -1,11 +1,12 @@
+import ThreeDText from "../ThreeDimensionalText/ThreeDimensionalText";
+
 type NavbarLogoProps = {
-  onClick?: () => void
+    onClick?: () => void
 }
 
-export default function NavbarLogo({ onClick }: NavbarLogoProps) {
-  return (
-    <div className="flex shrink-0 items-center cursor-pointer" onClick={onClick}>
-      <h3 className="font-bold">MPAS-JEDI</h3>
-    </div>
-  )
+export default function NavbarLogo({onClick}: NavbarLogoProps) {
+    return (
+        <ThreeDText text={"MPAS-JEDI"} onClick={onClick} size={1} baseDepth={0.01} hoverDepth={0.05} height={60} width={200}/>
+    )
+
 }

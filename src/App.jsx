@@ -1,10 +1,10 @@
 import Navbar from './components/Navbar/Navbar';
-import Card from "./components/Card/Card";
-import Heading from "./components/Heading/Heading";
+import Background from "./components/Background/Background";
 
 const App = () => {
     return (
         <>
+            <Background/>
             <Navbar/>
         </>
     );

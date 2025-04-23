@@ -4,6 +4,8 @@ export type LinkType = {
     label: string
     href: string
     isActive?: boolean
+    hover?: boolean
+    blur?: boolean
 }
 
 function handleLinkHoverFn(label: string, setLinks: React.Dispatch<React.SetStateAction<LinkType[]>>) {
@@ -11,6 +13,8 @@ function handleLinkHoverFn(label: string, setLinks: React.Dispatch<React.SetStat
         prevLinks.map(link => ({
             ...link,
             isActive: link.label != label,
+            hover: link.label === label,
+            blur: link.label != label,
         }))
     )
 }
@@ -29,6 +33,8 @@ function resetLinksFn(setLinks: React.Dispatch<React.SetStateAction<LinkType[]>>
         prevLinks.map(link => ({
             ...link,
             isActive: false,
+            hover: false,
+            blur: false,
         }))
     )
 }

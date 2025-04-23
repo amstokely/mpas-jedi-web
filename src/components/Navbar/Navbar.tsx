@@ -10,11 +10,11 @@ import NavbarLogo from "./NavbarLogo";
 
 export default function Navbar() {
     const [navbarLinks, setNavbarLinks] = useState<LinkType[]>([
-        {label: 'About', href: '#', isActive: false},
-        {label: 'Team', href: '#', isActive: false},
-        {label: 'Events', href: '#', isActive: false},
-        {label: 'Tutorials', href: '#', isActive: false},
-        {label: 'Publications', href: '#', isActive: false},
+        {label: 'About', href: '#', isActive: false, hover: false, blur: false},
+        {label: 'Team', href: '#', isActive: false, hover: false, blur: false},
+        {label: 'Events', href: '#', isActive: false, hover: false, blur: false},
+        {label: 'Tutorials', href: '#', isActive: false, hover: false, blur: false},
+        {label: 'Publications', href: '#', isActive: false, hover: false, blur: false},
     ])
     const {links, handleLinkClick, handleHover, resetLinks} = useNavbarLinkState(navbarLinks)
     return (

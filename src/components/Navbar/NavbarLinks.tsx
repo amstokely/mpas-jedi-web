@@ -22,6 +22,8 @@ export default function NavbarLinks({links, handleLinkClick, handleLinkHover, ha
                     label={link.label}
                     href={link.href}
                     isActive={link.isActive}
+                    hover={link.hover}
+                    blur={link.blur}
                     onClick={() => handleLinkClick(link.label)}
                     onHover={() => handleLinkHover(link.label)}
                     onMouseLeave={() => handleLinkMouseLeave(link.label)}

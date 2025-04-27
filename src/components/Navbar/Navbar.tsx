@@ -14,7 +14,7 @@ export default function Navbar() {
         {label: 'Team', href: '#', isActive: false, hover: false, blur: false},
         {label: 'Events', href: '#', isActive: false, hover: false, blur: false},
         {label: 'Tutorials', href: '#', isActive: false, hover: false, blur: false},
-        {label: 'Publications', href: '#', isActive: false, hover: false, blur: false},
+        {label: 'Publications', href: '#', isActive: false, hover: false},
     ])
     const {links, handleLinkClick, handleHover, resetLinks} = useNavbarLinkState(navbarLinks)
     return (
